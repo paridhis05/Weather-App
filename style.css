@@ -1,167 +1,217 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: none;
-    outline: none;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
-body{
+body {
     min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: black;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    background-size: 400% 400%;
+    animation: gradientBG 10s ease infinite;
+    transition: background 1s ease-in-out;
 }
 
-.container{
-    min-width: 400px;
-    height: min-content;
-    background-color: white;
-    border-radius: 12px;
-    padding: 28px;
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-.search-box{
-    width: 100%;
-    height: min-content;
+.container {
+    width: 650px;
+    min-width: 420px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+    transform: scale(1.02);
+}
+
+.search-box {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    background: white;
+    padding: 10px;
+    border-radius: 50px;
 }
 
-.search-box input{
-    width: 84%;
-    font-size: 20px;
-    text-transform: capitalize;
+.search-box input {
+    flex: 1;
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    background: transparent;
     color: #000;
-    background-color: #e6f5fb;
-    padding: 12px 16px;
-    border-radius: 14px;
+    outline: none;
 }
 
-.search-box input::placeholder{
-    color: #000;
+.search-box input::placeholder {
+    color: rgba(0, 0, 0, 0.7);
 }
 
-.search-box button{
-    width: 46px;
-    height: 46px;
-    background-color: #e6f5fb;
+.search-box button {
+    background: #d9d9d9;
     border-radius: 50%;
+    border: none;
+    width: 40px;
+    height: 40px;
     cursor: pointer;
-    font-size: 20px;
+    transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.search-box button:hover{
-    color: white;
-    background-color: #496a70;
+.search-box button:hover {
+    background: #e0e0e0;
+    transform: scale(1.1);
 }
 
 .weather-body {
     display: none;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    padding-top: 20px;
+    color: #fff;
+    animation: fadeIn 0.8s ease-in-out;
 }
 
-.weather-body img{
-    width: 50px;
-    margin-top: 30px;
+.weather-img {
+    width: 120px;
+    margin-bottom: 10px;
 }
 
-.weather-box{
-    margin-block: 20px;
-    text-align: center;
-}
-.weather-box .temperature{
-    font-size: 40px;
-    font-weight: 800;
-    position: relative;
-}
-.weather-box .temperature sup{
-    font-size: 20px;
-    position: absolute;
-    font-weight: 600;
-}
-.weather-box .description{
-    font-size: 20px;
+.temperature {
+    font-size: 50px;
     font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 20px;
     text-transform: capitalize;
 }
-.weather-details{
-    width: 100%;
+
+.weather-details {
     display: flex;
     justify-content: space-between;
-    margin-top: 30px;
+    width: 100%;
+    margin-top: 20px;
 }
 
-.humidity, .wind{
+.humidity, .wind {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
-.humidity{
-    margin-left: 20px;
-}
-.wind{
-    margin-right: 20px;
-}
-.weather-details i{
-    font-size: 36px;
+.weather-details i {
+    font-size: 28px;
 }
 
-.weather-details .text{
-    margin-left: 10px;
-    font-size: 16px;   
-}
-
-.text span{
+.text span {
     font-size: 20px;
-    font-weight: 700;
-}
-
-.location-not-found{
-    margin-top: 20px;
-    display: none;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.location-not-found h1{
-    font-size: 20px;
-    color: #6b6b6b;
-    margin-block-end: 15px;
-}
-
-.location-not-found img{
-    width: 80%;
+    font-weight: bold;
 }
 
 .forecast-container {
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 30px;
 }
 
 .forecast {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 10px;
     overflow-x: auto;
+    padding: 10px;
+    opacity: 0;
+    animation: slideDown 0.8s ease-in-out forwards;
+    animation-delay: 0.5s;
 }
 
 .forecast-item {
-    /* background: #f8f8f8; */
-    padding: 10px;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 10px;
     text-align: center;
-    min-width: 100px;
+    min-width: 90px;
+    color: #fff;
 }
 
 .forecast-item img {
-    width: 50px;
-    height: 50px;
+    width: 40px;
 }
 
+.location-not-found {
+    display: none;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 20px;
+    color: white;
+    max-width: 90%;
+    margin: 20px auto;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.location-not-found h1 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #eb1717; 
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 5px rgba(144, 144, 144, 0.2);
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+}
+
+.location-not-found.shake {
+    animation: shake 0.4s ease-in-out;
+}
+
+.location-not-found img {
+    width: 120px;
+    opacity: 0.9;
+    transition: transform 0.3s ease-in-out;
+}
+
+.location-not-found img:hover {
+    transform: scale(1.1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
