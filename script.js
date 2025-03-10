@@ -21,8 +21,17 @@ const weatherBackgrounds = {
     "Rain": "linear-gradient(135deg, #00416A, #E4E5E6)",
     "Snow": "linear-gradient(135deg, #00c6ff, #0072ff)",
     "Mist": "linear-gradient(135deg, #757F9A, #D7DDE8)",
+    "Drizzle": "linear-gradient(135deg, #7f8c8d, #95a5a6)",
     "Thunderstorm": "linear-gradient(135deg, #232526, #414345)",
-    "Default": "linear-gradient(135deg, #667eea, #764ba2)"
+    "Smoke": "linear-gradient(135deg, #555555, #999999)",
+    "Haze": "linear-gradient(135deg, #b3a28f, #d1c2aa)",
+    "Dust": "linear-gradient(135deg, #c2b280, #e4d5a1)",
+    "Fog": "linear-gradient(135deg, #b0b0b0, #e0e0e0)",
+    "Sand": "linear-gradient(135deg, #e0ac69, #d8a35c)",
+    "Ash": "linear-gradient(135deg, #434343, #6d6d6d)",
+    "Squall": "linear-gradient(135deg, #37474f, #607d8b)",
+    "Tornado": "linear-gradient(135deg, #1a1a1a, #4d4d4d)",
+    "Default": "linear-gradient(135deg, #667eea, #764ba2)" 
 };
 
 async function checkWeather(city) {
@@ -66,14 +75,30 @@ async function checkWeather(city) {
         // Set Weather Image
         const weatherIcons = {
             "Clear": "images/clear.png",
-            "Clouds": "images/cloudy.png",
-            "Rain": "images/raining.png",
-            "Mist": "images/haze.png",
+            "Clouds": "images/clouds.png",
+            "Rain": "images/rain.png",
             "Snow": "images/snow.png",
-            "Thunderstorm": "images/thunder.png"
+            "Mist": "images/mist.png",
+            "Drizzle": "images/drizzle.png",
+            "Thunderstorm": "images/thunderstorm.png",
+            "Smoke": "images/smoke.png",
+            "Haze": "images/haze.png",
+            "Dust": "images/dust.png",
+            "Fog": "images/fog.png",
+            "Sand": "images/sand.png",
+            "Ash": "images/ash.png",
+            "Squall": "images/squall.png",
+            "Tornado": "images/tornado.png",
+            "Default": "images/default.png"
         };
+        
+        // Function to update weather icon
+        function updateWeatherIcon(condition) {
+            weatherImg.src = weatherIcons[condition] || weatherIcons["Default"];
+        }
 
-        weatherImg.src = weatherIcons[weatherCondition] || "images/cloudy.png";
+        // Inside checkWeather() function (AFTER setting `weatherCondition`)
+        updateWeatherIcon(weatherCondition);  
 
         // Change Background
         body.style.background = weatherBackgrounds[weatherCondition] || weatherBackgrounds["Default"];
