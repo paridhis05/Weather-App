@@ -219,3 +219,75 @@ body {
         transform: translateY(0);
     }
 }
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+    transition: color 0.3s ease-in-out;
+}
+
+.dark-mode-toggle:hover {
+    color: #ffcc00;
+}
+
+/* Light Mode (Default) */
+body {
+    background: linear-gradient(135deg, #014871, #d7ede2);
+    transition: background 0.5s ease-in-out;
+    color: #000;
+}
+
+/* Dark Mode */
+.dark-mode body {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    color: #fff;
+}
+
+/* Change Search Box in Dark Mode */
+.dark-mode .search-box {
+    background: #222;
+    color: #fff;
+}
+
+.dark-mode .search-box input {
+    color: #fff;
+}
+
+.dark-mode .search-box input::placeholder {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .search-box button {
+    background: #444;
+    color: #fff;
+}
+
+.dark-mode .weather-body {
+    color: #fff;
+}
+
+/* Forecast Section Dark Mode */
+.dark-mode .forecast-item {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* 🌞 Light Mode Backgrounds (Default) */
+.light-mode {
+    background: linear-gradient(135deg, #014871, #d7ede2);
+    transition: background 0.5s ease-in-out;
+    color: #000;
+}
+
+/* 🌙 Dark Mode Backgrounds */
+.dark-mode {
+    background: linear-gradient(135deg, #1a1a2e, #26386b);
+    transition: background 0.5s ease-in-out;
+    color: #fff;
+}
+
