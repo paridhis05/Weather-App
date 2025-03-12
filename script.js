@@ -90,19 +90,18 @@ if (localStorage.getItem("darkMode") === "enabled") {
     toggleDarkMode.classList.replace("fa-moon", "fa-sun");
 }
 
-// Function to toggle Dark Mode
+// 🌙 Toggle Dark Mode
 toggleDarkMode.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
 
     if (document.body.classList.contains("dark-mode")) {
         localStorage.setItem("darkMode", "enabled");
-        toggleDarkMode.classList.replace("fa-moon", "fa-sun"); // Change to Sun Icon ☀️
+        toggleDarkMode.classList.replace("fa-moon", "fa-sun");
     } else {
         localStorage.setItem("darkMode", "disabled");
-        toggleDarkMode.classList.replace("fa-sun", "fa-moon"); // Change back to Moon Icon 🌙
+        toggleDarkMode.classList.replace("fa-sun", "fa-moon");
     }
 
-    // Update background based on mode
     updateBackground(currentWeatherCondition);
 });
 
@@ -137,8 +136,9 @@ async function checkWeather(city) {
         // Add fade-in effect for smooth appearance
         weatherBody.style.animation = "fadeIn 0.8s ease-in-out";
 
-        const weatherCondition = weather_data.weather[0].main;
-        currentWeatherCondition = weatherCondition; // Store the current weather condition
+        // ✅ Store Current Weather Condition
+        currentWeatherCondition = weather_data.weather[0].main;
+        updateBackground(currentWeatherCondition); // ✅ Update background immediately
 
         temperature.innerHTML = `${Math.round(weather_data.main.temp)}°C`;
         description.innerHTML = weather_data.weather[0].description;
@@ -181,6 +181,7 @@ async function checkWeather(city) {
         console.error("Error fetching weather data:", error);
     }
 }
+
 
 async function checkForecast(city) {
     if (!city) return;
