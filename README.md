@@ -63,15 +63,21 @@ To run this project on your local machine:
 
 ## Screenshots
 
-<!-- ![Quiz Game!](./assets/images/image1.png "Quiz Game")
+![Weather App!](./assets/images/image1.png "Light Mode")
 
-![Quiz Game!](./assets/images/image2.png "Start")
+![Weather App!](./assets/images/image2.png "Dark Mode")
 
-![Quiz Game!](./assets/images/image3.png "Wrong Answer")
+![Weather App!](./assets/images/image3.png "Smoke Weather(Light)")
 
-![Quiz Game!](./assets/images/image4.png "Right Answer")
+![Weather App!](./assets/images/image4.png "Mist Weather(Light)")
 
-![Quiz Game!](./assets/images/image5.png "Score Display") -->
+![Weather App!](./assets/images/image5.png "Mist Weather(Dark)")
+
+![Weather App!](./assets/images/image6.png "Rain Weather(Dark)")
+
+![Weather App!](./assets/images/image7.png "Clear Weather(Light)")
+
+![Weather App!](./assets/images/image8.png "Haze Weather(Light)")
 
 
 ## API Setup
