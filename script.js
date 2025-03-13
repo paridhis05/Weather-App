@@ -66,7 +66,6 @@ const weatherBackgrounds = {
 function updateBackground(weatherCondition) {
     const mode = document.body.classList.contains("dark-mode") ? "Dark" : "Light";
     body.style.background = weatherBackgrounds[mode][weatherCondition] || weatherBackgrounds[mode]["Default"];
-    body.style.transition = "background 1s ease-in-out";
 }
 
 function updateWeatherIcon(weatherCondition) {
@@ -92,10 +91,10 @@ function updateWeatherIcon(weatherCondition) {
 }
 
 // Check if Dark Mode is enabled in Local Storage
-// Ensure background updates on initial load
 if (localStorage.getItem("darkMode") === "enabled") {
     document.body.classList.add("dark-mode");
     toggleDarkMode.classList.replace("fa-moon", "fa-sun");
+    updateBackground(currentWeatherCondition); // ✅ Fix: Apply correct background on page load
 }
 
 // 🌙 Toggle Dark Mode
@@ -146,10 +145,13 @@ async function checkWeather(city) {
 
         locationNotFound.style.display = "none";
         weatherBody.style.display = "flex";
-        weatherBody.style.animation = "fadeIn 0.8s ease-in-out";
 
         // Add fade-in effect for smooth appearance
+        weatherBody.style.opacity = "1";
         weatherBody.style.animation = "fadeIn 0.8s ease-in-out";
+        setTimeout(() => {
+            weatherBody.style.animation = "slideDown 0.8s ease-in-out forwards";
+        }, 10);
 
         currentWeatherCondition = weather_data.weather[0].main; // ✅ Store condition
         updateBackground(currentWeatherCondition);
@@ -207,14 +209,6 @@ async function checkForecast(city) {
             `;
             forecastContainer.innerHTML += forecastItem;
         });
-
-        // Show forecast with animation
-        // forecastContainer.style.opacity = "1";
-        forecastContainer.style.animation = "none";
-        setTimeout(() => {
-            forecastContainer.style.animation = "slideDown 0.8s ease-in-out forwards";
-        }, 10);
-
 
     } catch (error) {
         console.error("Error fetching forecast data:", error);
