@@ -13,7 +13,7 @@ body {
     background: linear-gradient(135deg, #014871, #d7ede2);
     background-size: 400% 400%;
     animation: gradientBG 10s ease infinite;
-    transition: background 1s ease-in-out;
+    transition: background 1.5s ease-in-out;
 }
 
 @keyframes gradientBG {
@@ -235,19 +235,6 @@ body {
     color: #ffcc00;
 }
 
-/* Light Mode (Default) */
-body {
-    background: linear-gradient(135deg, #014871, #d7ede2);
-    transition: background 0.5s ease-in-out;
-    color: #000;
-}
-
-/* Dark Mode */
-.dark-mode body {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    color: #fff;
-}
-
 /* Change Search Box in Dark Mode */
 .dark-mode .search-box {
     background: #222;
@@ -277,17 +264,14 @@ body {
     color: #fff;
 }
 
-/* 🌞 Light Mode Backgrounds (Default) */
-.light-mode {
-    background: linear-gradient(135deg, #014871, #d7ede2);
-    transition: background 0.5s ease-in-out;
-    color: #000;
-}
-
-/* 🌙 Dark Mode Backgrounds */
 .dark-mode {
-    background: linear-gradient(135deg, #1a1a2e, #26386b);
-    transition: background 0.5s ease-in-out;
+    background: linear-gradient(135deg, #1a1a2e, #26386b) !important;
+    transition: background 1.5s ease-in-out !important;
     color: #fff;
 }
 
+.light-mode {
+    background: linear-gradient(135deg, #014871, #d7ede2) !important;
+    transition: background 1.5s ease-in-out !important;
+    color: #000;
+}
