@@ -39,11 +39,11 @@ To run this project on your local machine:
 
 1. Clone the repository:
 
-git clone https://github.com/paridhis05/Weather-App.git
+>git clone https://github.com/paridhis05/Weather-App.git
 
 2. Navigate to the project folder:
 
-cd weather-app
+>cd weather-app
 
 3. Open the **index.html** file in a web browser.
 
@@ -81,7 +81,7 @@ This app uses the OpenWeather API. To use it, follow these steps:
 1. Sign up at OpenWeather and get a free API key.
 
 2. Replace API_KEY in script.js with your own key:
-<p style="background: #d5d5d5; padding: 10px">const API_KEY = "your_api_key_here";</p>
+>const API_KEY = "your_api_key_here";
 
 
 ## Contributing
