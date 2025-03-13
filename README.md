@@ -81,7 +81,7 @@ This app uses the OpenWeather API. To use it, follow these steps:
 1. Sign up at OpenWeather and get a free API key.
 
 2. Replace API_KEY in script.js with your own key:
->const API_KEY = "your_api_key_here";
+<p style="background: #d5d5d5; padding: 10px">const API_KEY = "your_api_key_here";</p>
 
 
 ## Contributing
