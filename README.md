@@ -73,11 +73,11 @@ To run this project on your local machine:
 
 ![Weather App!](./assets/images/image5.png "Mist Weather(Dark)")
 
-![Weather App!](./assets/images/image6.png "Rain Weather(Dark)")
-
 ![Weather App!](./assets/images/image7.png "Clear Weather(Light)")
 
 ![Weather App!](./assets/images/image8.png "Haze Weather(Light)")
+
+![Weather App!](./assets/images/image6.png "Rain Weather(Dark)")
 
 
 ## API Setup
