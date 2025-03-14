@@ -16,7 +16,7 @@ let currentWeatherCondition = "Default";
 // Hides the "City Not Found" message by default.
 locationNotFound.style.display = "none";
 
-const API_KEY = "b06a04caab711a2ad85933fd7694ed1f"; // Replace with a valid OpenWeather API key
+const API_KEY = "your_api_key_here"; // Replace with a valid OpenWeather API key
 
 // Select the dark mode toggle button
 const toggleDarkMode = document.getElementById("toggleDarkMode");
